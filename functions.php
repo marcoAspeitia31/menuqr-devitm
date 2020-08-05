@@ -27,6 +27,14 @@ endif; // menuqr_devitm_setup
 add_action( 'after_setup_theme', 'menuqr_devitm_setup' );
 
 /**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker(){
+	require_once get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php';
+}
+add_action( 'after_setup_theme', 'register_navwalker' );
+
+/**
  * Proper way to enqueue scripts and styles
  */
 function menuqr_devitm_theme_scripts() {
